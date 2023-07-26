@@ -1,0 +1,123 @@
+@import "../styles/variables.module.scss";
+@import "../styles/mixins.scss";
+@import "../styles/grid.module.scss";
+
+.footer {
+  background-color: $secondary-base;
+  padding-bottom: 4rem;
+  padding-top: 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  @include container();
+}
+
+.top{
+  display: grid;
+  align-items: flex-start;
+
+  @include mq(lg){
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.info {
+  color: white;
+
+  a{
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+  a,p{
+    margin-bottom: 2rem;
+  }
+}
+
+
+.menusItems {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+  /* justify-content: center; */
+  @include mq(sm) {
+    grid-template-columns: 1fr 1fr;
+    justify-content: flex-end;
+  }
+}
+
+.menuItem {
+  li:hover {
+    outline: 0.2rem solid white;
+    transition: all 0.25s ease-in-out;
+  }
+}
+
+.menuLabel {
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  display: block;
+  font-family: "Poppins", sans-serif;
+}
+
+.socialBox {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcon {
+  width: 4rem;
+  height: 4rem;
+  position: relative;
+  cursor: pointer;
+
+  svg {
+    width: 100%;
+    fill: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+.bottom{
+  display: grid;
+  gap: 2rem;
+  justify-content: center;
+  justify-items: center;
+  color: white;
+  border-top: 0.1rem solid $secondary-light;
+  padding-top: 1rem;
+  margin-top: 2rem;
+  align-items: flex-end;
+  @include mq(lg){
+    justify-content: space-between;
+    display: flex;
+  }
+
+  p{
+    margin: 0;
+  }
+}
+
+
+
+.logo {
+  position: relative;
+  width: 15rem;
+
+  & > img {
+    position: relative !important;
+    display: block;
+    max-width: 100%;
+    object-fit: contain;
+  }
+}

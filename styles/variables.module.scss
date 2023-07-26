@@ -1,0 +1,41 @@
+$primary-base: #BC2028;
+
+$secondary-base: #282828;
+$secondary-light: #949494;
+
+$text-base: #282828;
+
+$h1: var(var($text-base));
+$h2: var(var($text-base));
+$h3: var(var($text-base));
+$h4: var(var($text-base));
+$h5: var(var($text-base));
+$h6: var(var($text-base));
+
+$cta-base: #ffeb36;
+$cta-hover: #ffeb36;
+
+$header-base: transparent;
+$header-sticky: rgba(255 255 255 /0.95);
+
+:export {
+  primaryBase: $primary-base;
+
+  secondaryBase: $secondary-base;
+  secondaryLight: $secondary-light;
+
+  textBase: $text-base;
+
+  h1: $h1;
+  h2: $h2;
+  h3: $h3;
+  h4: $h4;
+  h5: $h5;
+  h6: $h6;
+
+  ctaBase: $cta-base;
+  ctaHover: $cta-hover;
+
+  headerBase: $header-base;
+  headerSticky: $header-sticky;
+}

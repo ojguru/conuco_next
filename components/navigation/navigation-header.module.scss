@@ -1,0 +1,62 @@
+@import "../../styles/mixins.scss";
+
+.menu {
+  display: none;
+  margin: 0 auto;
+  @include mq(lg) {
+    margin: initial;
+    display: block;
+  }
+}
+
+.container {
+  z-index: initial;
+}
+
+.containerSplit {
+  display: flex;
+  gap: 0.25rem 1rem;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+.label {
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--poppins), sans-serif;
+  font-size: 1.8rem;
+}
+
+.navBox {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  max-width: 30rem;
+  background-color: white;
+  padding: 1.5rem;
+  transition: all 0.1s ease-out;
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(0%, -10%);
+  border-radius: 0 0 1rem 1rem;
+
+  &:global(.active) {
+    transition: all 0.25s ease-in;
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0%, 0%);
+  }
+
+  &:global(.left) {
+    left: 0;
+  }
+
+  &:global(.center) {
+    left: 33.33%;
+  }
+
+  &:global(.right) {
+    right: 0;
+  }
+}

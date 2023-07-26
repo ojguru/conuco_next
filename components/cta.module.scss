@@ -1,0 +1,37 @@
+@import "@/styles/variables.module.scss";
+
+@mixin cta {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: $primary-base;
+  font-family: var(--poppins), sans-serif;
+  font-weight: 600;
+  padding: 1.5rem 2.5rem;
+  font-size: 1.8rem;
+  border-radius: 1rem;
+  display: inline-block;
+  color: white;
+  outline: initial;
+  border: initial;
+  cursor: pointer;
+  text-shadow: 0.1rem 0.1rem 0.1rem transparent;
+  text-transform: uppercase;
+  transition: all 0.25s ease-in-out;
+  &:focus {
+    outline: 0.2rem solid $secondary-base;
+  }
+  &:hover {
+    background-color: $secondary-base;
+  }
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.cta {
+  @include cta();
+}
