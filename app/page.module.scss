@@ -1,315 +1,218 @@
-@import "../styles/variables.module.scss";
-@import "../styles/mixins.scss";
-@import "../styles/grid.module.scss";
-@import "../styles/tipography.module.scss";
-@import "@/styles/general.module.scss";
+@import "@/styles/variables.module.scss";
+@import "@/styles/grid.module.scss";
+@import "@/styles/media.module.scss";
+@import "@/components/cta.module.scss";
 
-
-.cover {
-  position: relative;
-
-  h1 {
-    display: none;
-  }
-
-  @include mq(lg) {
-    min-height: 56.25vw;
-  }
-
-  @include mq(xl) {
-    min-height: 56.25vw;
-  }
+.container{
+  @include container();
 }
 
-.coverImage {
-  height: 65vw;
+.title{
+  display: none;
+}
+
+.subTitleLabel{
+  text-transform: uppercase;
+  color: $secondary-light;
+  margin: 0;
+  margin-bottom: 0rem;
+}
+
+.subTitle{
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.cover{}
+
+.coverVideo{
   width: 100%;
-  position: relative;
-  overflow: hidden;
-
-  @include mq(lg) {
-    height: 56.25vw;
-  }
-
-  &:before {
-    content: "";
-    width: 10%;
-    padding-bottom: 10%;
-    height: 0;
-    position: absolute;
-    bottom: 15%;
-    right: 80%;
-    z-index: 2;
-    background-color: $secondary-base;
-    border-radius: 50%;
-    @include mq(lg) {
-      width: 7%;
-      padding-bottom: 7%;
-      bottom: 1%;
-      right: 15%;
-    }
-  }
-
-  img {
-    position: absolute;
-    object-fit: cover;
-    object-position: center center;
-    clip-path: ellipse(75% 100% at 60% -0%);
-  }
 }
 
-.coverContainer {
-  @include container;
-  margin: $space-thin auto;
-  position: initial;
-  padding: 0;
+.proyectos{}
+
+.proyectosLista{
   display: grid;
-  align-items: center;
+  margin-top: 3rem;
 
-  @include mq(lg) {
-    grid-template-columns: 1fr 1.25fr;
-    min-height: 50vw;
-    margin-top: -62.5vw;
-    max-width: 80%;
-  }
-
-  @include mq(xl) {
-    margin-top: -56.25vw;
-    grid-template-columns: 1fr 1fr;
-    min-height: 40vw;
-    max-width: 75%;
-  }
-}
-
-.coverContent {
-  position: relative;
-  z-index: 1;
-  justify-self: center;
-  text-align: center;
-  @include mq(lg) {
-    text-align: left;
-  }
-
-  h2 {
-    @include h1m();
-    font-weight: 600;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    @include mq(xl) {
-      font-size: 2.5vw !important;
-    }
-  }
-
-  p {
-    @extend %parrafo;
-    margin-bottom: 2rem;
-    text-align: justify;
-    @include mq(xl) {
-      font-size: 1vw;
-    }
-  }
-}
-
-// .about {
-// }
-
-.aboutContainer {
-  @include container();
-  margin-top: $space-medium;
-  margin-bottom: $space-medium;
-}
-
-.aboutWrapper {
-  display: grid;
-  align-items: center;
-  position: relative;
-  @include mq(lg) {
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-  }
-}
-
-.aboutMediaWrapper {
-  background-color: $secondary-base;
-  border-radius: 100%;
-  padding: 7.5%;
-  position: relative;
-  &:before {
-    content: "";
-    position: absolute;
-    bottom: 50%;
-    right: 100%;
-    width: 250vw;
-    height: 250vw;
-    background-color: transparent;
-    border-bottom: solid $primary-base;
-    border-right: solid transparent;
-    border-left: solid transparent;
-    border-top: solid transparent;
-    border-width: 40vw;
-    border-radius: 50%;
-    transform-origin: left bottom;
-    transform: translate(40%, -25%) rotate(30deg);
-    z-index: -1;
-    @include mq(lg) {
-      width: 150vw;
-      height: 150vw;
-      border-width: 25rem;
-      transform-origin: center center;
-      transform: translate(62.5%, 6.5%) rotate(45deg);
-    }
-    @include mq(xl) {
-      transform: translate(57.5%, 3.5%) rotate(45deg);
-    }
-  }
-}
-
-.aboutMedia {
-  position: relative;
-  height: 0;
-  width: 100%;
-  padding-bottom: 100%;
-  box-sizing: border-box;
-  border-radius: inherit;
-  overflow: hidden;
-
-  & > img {
-    position: absolute;
-    object-fit: cover;
-    object-position: center center;
-  }
-}
-
-.aboutContent {
-  position: relative;
-  text-align: center;
-
-  @include mq(lg) {
-    text-align: left;
-  }
-
-  h2 {
-    margin-top: 4rem;
-
-    @include mq(lg) {
-      text-align: left;
-      margin-top: initial;
-    }
-  }
-
-  p {
-    @extend %parrafo;
-    text-align: justify;
-    margin-bottom: 3rem;
-  }
-}
-
-.resultados {
-  position: relative;
-  &:before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(60%, -50%);
-    width: 100vw;
-    height: 100vw;
-    border: 15vw solid $secondary-light;
-    border-radius: 50%;
-    z-index: -1;
-  }
-}
-
-.resultadosContainer {
-  @include container();
-  margin-top: $space-medium;
-  margin-bottom: $space-medium;
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  gap: 2rem;
-  @include mq(lg) {
-    grid-template-columns: 1.25fr 1fr;
-  }
-}
-
-.resultadosMedio {
-  position: relative;
-  padding-bottom: 80%;
-  & > img {
-    object-fit: contain;
-    position: relative;
-    margin: 0 auto;
-    max-width: 50rem;
-  }
-}
-
-.resultadosContenido {
-  text-align: center;
-
-  @include mq(lg) {
-    text-align: initial;
-  }
-
-  h2 {
-    @include h3m();
-  }
-
-  p {
-    margin-bottom: 2.5rem;
-    text-align: justify;
-  }
-}
-
-.seguros {
-  position: relative;
-}
-
-.segurosContainer {
-  @include container();
-  margin-top: $space-medium;
-  margin-bottom: $space-medium;
-
-  h2 {
-    text-align: center;
-  }
-}
-
-.segurosLista {
-  @include container();
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  gap: 2rem;
-  @include mq(sm) {
-    gap: 4rem;
-  }
-  @include mq(md) {
+  @include mq(lg){
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
-.segurosMedio {
+.proyecto{
   position: relative;
-  padding-bottom: 56.25%;
-  & > img {
+
+  & > div:first-of-type{
+    @extend %medio;
+    padding-bottom: 125%;
+  }
+
+  & > div:nth-of-type(2){
+    position: absolute;
+    background-color: $primary-base;
+    color: white;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+
+    h3{
+      font-weight: 800;
+  margin: 0;
+  font-size: 2rem;
+    }
+
+    h4{
+      margin: 0;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
+
+    p{
+  margin: 0;
+
+    }
+  }
+
+  &:first-of-type, &:nth-of-type(2){
+    grid-column: 1 / span 4;
+    margin-bottom: 4rem;
+    & > div:first-of-type{
+      padding-bottom: 56.25%;
+    }
+  }
+}
+
+.proyectosMore{
+  margin: $space-thin auto;
+  text-align: center
+}
+
+.proyectosMoreBtn{
+  @include cta();
+}
+
+.statement{
+  margin: $space-medium auto;
+}
+
+.statementContainer{
+  display: grid;
+  gap: 3rem;
+  @include mq(lg){
+
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.statementMedio{
+  @extend %medio;
+  padding-bottom: 100%;
+}
+
+.servicios{
+  margin: $space-medium auto;
+}
+
+.listaServicios{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 4rem;
+  @include mq(lg){
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.servicioMedio{
+  @extend %medio;
+  max-width: 10rem;
+  margin: 0 auto;
+  padding-bottom: 10rem;
+  img{
     object-fit: contain;
   }
 }
 
-.servicios {
-  z-index: initial;
+.servicioTitle{
+  font-weight: 800;
+  font-size: 1.8rem;
+  text-align: center;
 }
 
-.serviciosContainer {
+.servicioCopy{
+  text-align: center;
+}
+
+.clientes{
+  margin: $space-medium auto;
+}
+
+.listaClientes{
+  background-color: $primary-base;
+  padding: 4rem 0;
+  margin-top: 3rem
+}
+
+.listaClientesContainer{
   @include container();
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1fr 1fr;
+
+  @include mq(md){
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  @include mq(lg){
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
 }
 
-.serviciosHeader {
-  margin-bottom: 6rem;
+.clienteMedio{
+  @extend %medio;
+  padding-bottom: 56.25%;
 
-  h2 {
-    text-align: center;
+  img{
+    object-fit: contain;
+  }
+}
+
+.contacto{
+  position: relative;
+  margin: $space-medium 0;
+
+  svg{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: $primary-base;
+    width: 60%;
+    transform: translate(50%, 80%);
+    @include mq(lg){
+      max-width:75rem ;
+    }
+  }
+}
+
+.contactoContainer{
+  display: grid;
+  gap: 3rem;
+  @include mq(lg){
+
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contactoInfo{
+  a,p{
+    display: block;
+    margin: 0.5rem 0;
+  }
+  
+  p{
+    margin-top: 4rem;
   }
 }

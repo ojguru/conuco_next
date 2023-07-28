@@ -4,23 +4,16 @@ import "@/styles/tipography.module.scss";
 import ThemeProvider from "@/components/ThemeProvider";
 import styles from "@/app/layout.module.scss";
 
-import { IBM_Plex_Sans, Poppins } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Suspense } from "react";
 
-const ibm_plex_sans = IBM_Plex_Sans({
-  weight: ["200", "300", "400", "600"],
+const montserrat = Montserrat({
+  weight: ["200", "300", "400", "600", "700", "800", "900"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--ibm",
-});
-
-const poppins = Poppins({
-  weight: ["400", "500", "700", "600"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--poppins",
+  variable: "--montserrat",
 });
 
 export const metadata = {
@@ -34,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${ibm_plex_sans.variable} ${poppins.variable}`}>
+    <html lang="en" className={`${montserrat.variable}`}>
       <head></head>
       <body className={styles.body}>
         <ThemeProvider>

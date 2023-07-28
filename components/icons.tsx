@@ -19,125 +19,6 @@ export const WhatsappIcon = () => (
   </svg>
 );
 
-export const ProcedimientoIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="34.273"
-    height="34.306"
-    viewBox="0 0 34.273 34.306"
-  >
-    <path
-      id="Trazado_54"
-      data-name="Trazado 54"
-      d="M37.816,8.784l-6.29-6.29a1.715,1.715,0,0,0-2.369,0,1.715,1.715,0,0,0,0,2.287L31.2,6.823,28.422,9.6,24.011,5.108h0a1.646,1.646,0,0,0-2.287,2.369L8.817,20.3a5.146,5.146,0,0,0-1.389,4.248l.9,5.146L4.487,33.535a1.552,1.552,0,0,0,0,2.287,1.552,1.552,0,0,0,2.287,0l3.839-3.839,5.146.9a4.9,4.9,0,0,0,4.248-1.389L32.915,18.586a1.634,1.634,0,1,0,2.369-2.206l-4.574-4.493L33.486,9.11l2.042,2.042a1.634,1.634,0,0,0,1.144.49,1.715,1.715,0,0,0,1.144-2.859Zm-20.1,20.422a1.879,1.879,0,0,1-1.47.408L11.512,28.8,10.7,24.059a1.879,1.879,0,0,1,.408-1.47l2.124-2.042,2.614,2.614a1.715,1.715,0,0,0,2.369,0,1.552,1.552,0,0,0,0-2.287l-2.7-2.7,2.777-2.7,2.7,2.614a1.634,1.634,0,0,0,2.287-2.287l-2.7-2.7,3.431-3.349L30.546,16.3Z"
-      transform="translate(-3.985 -2.019)"
-      fill="currentColor"
-    />
-  </svg>
-);
-
-export const ProcedimientoInfoIcon = () => (
-  <svg
-    id="Layer_2"
-    data-name="Layer 2"
-    xmlns="http://www.w3.org/2000/svg"
-    width="48"
-    height="48"
-    viewBox="0 0 48 48"
-  >
-    <g id="invisible_box" data-name="invisible box">
-      <rect
-        id="Rectángulo_148"
-        data-name="Rectángulo 148"
-        width="48"
-        height="48"
-        fill="none"
-      />
-    </g>
-    <g id="Layer_7" data-name="Layer 7">
-      <path
-        id="Trazado_55"
-        data-name="Trazado 55"
-        d="M38,32.8,32,26l-6,6.8a8.2,8.2,0,0,0-2,5.8,9.1,9.1,0,0,0,1,3.3H24a6,6,0,0,1-6-6V12H30v9a2,2,0,0,0,4,0V12h2a2,2,0,0,0,0-4H32V2H16V8H12a2,2,0,0,0,0,4h2V36A10,10,0,0,0,24,46a8.7,8.7,0,0,0,4.2-1A7.5,7.5,0,0,0,32,46a8,8,0,0,0,5.2-1.9A7.9,7.9,0,0,0,38,32.8ZM20,6h8V8H20ZM34.6,41a4,4,0,0,1-5.2,0,3.8,3.8,0,0,1-.4-5.5L32,32l3,3.5a3.8,3.8,0,0,1-.4,5.5Z"
-        fill="currentColor"
-      />
-    </g>
-  </svg>
-);
-
-export const RequerimientoInfoIcon = () => (
-  <svg
-    id="Layer_2"
-    data-name="Layer 2"
-    xmlns="http://www.w3.org/2000/svg"
-    width="48"
-    height="48"
-    viewBox="0 0 48 48"
-  >
-    <g id="invisible_box" data-name="invisible box">
-      <rect
-        id="Rectángulo_149"
-        data-name="Rectángulo 149"
-        width="48"
-        height="48"
-        fill="none"
-      />
-    </g>
-    <g id="Q3_icons" data-name="Q3 icons">
-      <g id="Grupo_88" data-name="Grupo 88">
-        <circle
-          id="Elipse_95"
-          data-name="Elipse 95"
-          cx="2"
-          cy="2"
-          r="2"
-          transform="translate(12 29)"
-          fill="currentColor"
-        />
-        <path
-          id="Trazado_56"
-          data-name="Trazado 56"
-          d="M34,29H22a2,2,0,0,0,0,4H34a2,2,0,0,0,0-4Z"
-          fill="currentColor"
-        />
-        <circle
-          id="Elipse_96"
-          data-name="Elipse 96"
-          cx="2"
-          cy="2"
-          r="2"
-          transform="translate(12 35)"
-          fill="currentColor"
-        />
-        <path
-          id="Trazado_57"
-          data-name="Trazado 57"
-          d="M34,35H22a2,2,0,0,0,0,4H34a2,2,0,0,0,0-4Z"
-          fill="currentColor"
-        />
-        <path
-          id="Trazado_58"
-          data-name="Trazado 58"
-          d="M24,14a6,6,0,1,0-6-6,6,6,0,0,0,6,6Zm0-8a2,2,0,1,1-2,2A2,2,0,0,1,24,6Z"
-          fill="currentColor"
-        />
-        <path
-          id="Trazado_59"
-          data-name="Trazado 59"
-          d="M13,20v4a2,2,0,0,0,2,2H33a2,2,0,0,0,2-2V20a18,18,0,0,0-11-4,18,18,0,0,0-11,4Zm4.1,2A13.5,13.5,0,0,1,24,20a13.5,13.5,0,0,1,6.9,2Z"
-          fill="currentColor"
-        />
-        <path
-          id="Trazado_60"
-          data-name="Trazado 60"
-          d="M41,2H36a2,2,0,0,0,0,4h4V42H8V6h4a2,2,0,0,0,0-4H7A2.9,2.9,0,0,0,4,5V43a2.9,2.9,0,0,0,3,3H41a2.9,2.9,0,0,0,3-3V5a2.9,2.9,0,0,0-3-3Z"
-          fill="currentColor"
-        />
-      </g>
-    </g>
-  </svg>
-);
-
 export const LocationIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -372,20 +253,21 @@ export const TwitterIcon = () => (
   </svg>
 );
 
-export const UserIcon = () => (
+// ICONOS MARCA
+
+export const Palmera = () => (
   <svg
-    className="svg-icon"
-    aria-hidden="true"
-    role="img"
-    focusable="false"
     xmlns="http://www.w3.org/2000/svg"
-    width="18"
-    height="20"
-    viewBox="0 0 18 20"
+    width="841.396"
+    height="923.187"
+    viewBox="0 0 841.396 923.187"
   >
     <path
+      id="Path_50"
+      data-name="Path 50"
+      d="M1855.632,373.63l-113.586,77.205C1694.527,380.943,1637.5,351,1567.533,359.319c-24.646,2.962-46.828,10.214-63.655,17.273V932.6h-137.33V376.785c-17.831-7.506-41.656-15.254-68.261-17.9-68.126-6.684-123.911,23.379-170.485,91.952L1014.236,373.63c74.557-109.722,163.8-145.718,239.811-151.895-36.554-25.2-83.2-33.907-141.114-26.462l-17.455-136.2c130.332-16.695,216.047,25.275,271.071,77.4V9.411h137.33V135.838c55.085-51.808,140.667-93.4,270.442-76.769l-17.455,136.2c-57.985-7.445-104.559,1.258-141.114,26.462,76.009,6.116,165.252,42.1,239.881,151.895"
+      transform="translate(-1014.236 -9.411)"
       fill="currentColor"
-      d="M18,19 C18,19.5522847 17.5522847,20 17,20 C16.4477153,20 16,19.5522847 16,19 L16,17 C16,15.3431458 14.6568542,14 13,14 L5,14 C3.34314575,14 2,15.3431458 2,17 L2,19 C2,19.5522847 1.55228475,20 1,20 C0.44771525,20 0,19.5522847 0,19 L0,17 C0,14.2385763 2.23857625,12 5,12 L13,12 C15.7614237,12 18,14.2385763 18,17 L18,19 Z M9,10 C6.23857625,10 4,7.76142375 4,5 C4,2.23857625 6.23857625,0 9,0 C11.7614237,0 14,2.23857625 14,5 C14,7.76142375 11.7614237,10 9,10 Z M9,8 C10.6568542,8 12,6.65685425 12,5 C12,3.34314575 10.6568542,2 9,2 C7.34314575,2 6,3.34314575 6,5 C6,6.65685425 7.34314575,8 9,8 Z"
     />
   </svg>
 );
