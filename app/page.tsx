@@ -1,14 +1,45 @@
 import styles from "@/app/page.module.scss";
 import { Palmera } from "@/components/icons";
+import { ImageFragment } from "@/fragments/GeneralSettings";
+import { Cliente, Proyecto } from "@/gql/graphql";
+import { fetchAPI, getImageURL } from "@/lib/api";
 import Image from "next/image";
 import Link from "next/link";
 
 const QUERY = `
+  query HomeQuery{
+    proyectos(pagination:{limit:6}){
+      nombre
+      slug
+      cliente{
+        nombre
+      }
+      pilar{
+        nombre
+      }
+      medio{
+        ${ImageFragment}
+      }
+    }
+    clientes{
+      nombre
+      logo{
+        ${ImageFragment}
+      }
+    }
+  }
 `;
 
 const queryVars = {};
 
-export default async function Home() {
+export default async function Home({ params }: { params: { slug: string } }) {
+  const data = await fetchAPI(QUERY, {
+    variables: { ...queryVars, ...params },
+  });
+
+  const proyectos: Proyecto[] = data.proyectos;
+  const clientes: Cliente[] = data.clientes;
+
   return (
     <>
       <div className={styles.portada}>
@@ -44,96 +75,32 @@ export default async function Home() {
             <h2 className={styles.subTitle}>Lo que hemos cosechado</h2>
           </div>
           <div className={styles.proyectosLista}>
-            <div className={styles.proyecto}>
-              <div className={styles.proyectoMedio}>
-                <Image src="/home/proyecto.jpg" alt="proyecto" fill />
-              </div>
-              <div className={styles.proyectoInfo}>
-                <h4 className={styles.proyectoCliente}>Coopbueno</h4>
-                <h3 className={styles.proyectoNombre}>Misión del ahorro</h3>
-                <p className={styles.proyectoCopy}>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
-                  aliquam porro, est soluta magni quas harum recusandae maiores,
-                  sint quam impedit blanditiis fugiat, cum in natus! Doloribus
-                  dolorum voluptatem velit!
-                </p>
-              </div>
-            </div>
-            <div className={styles.proyecto}>
-              <div className={styles.proyectoMedio}>
-                <Image src="/home/proyecto.jpg" alt="proyecto" fill />
-              </div>
-              <div className={styles.proyectoInfo}>
-                <h4 className={styles.proyectoCliente}>Coopbueno</h4>
-                <h3 className={styles.proyectoNombre}>Misión del ahorro</h3>
-                <p className={styles.proyectoCopy}>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
-                  aliquam porro, est soluta magni quas harum recusandae maiores,
-                  sint quam impedit blanditiis fugiat, cum in natus! Doloribus
-                  dolorum voluptatem velit!
-                </p>
-              </div>
-            </div>
-            <div className={styles.proyecto}>
-              <div className={styles.proyectoMedio}>
-                <Image src="/home/proyecto.jpg" alt="proyecto" fill />
-              </div>
-              <div className={styles.proyectoInfo}>
-                <h4 className={styles.proyectoCliente}>Coopbueno</h4>
-                <h3 className={styles.proyectoNombre}>Misión del ahorro</h3>
-                <p className={styles.proyectoCopy}>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
-                  aliquam porro, est soluta magni quas harum recusandae maiores,
-                  sint quam impedit blanditiis fugiat, cum in natus! Doloribus
-                  dolorum voluptatem velit!
-                </p>
-              </div>
-            </div>
-            <div className={styles.proyecto}>
-              <div className={styles.proyectoMedio}>
-                <Image src="/home/proyecto.jpg" alt="proyecto" fill />
-              </div>
-              <div className={styles.proyectoInfo}>
-                <h4 className={styles.proyectoCliente}>Coopbueno</h4>
-                <h3 className={styles.proyectoNombre}>Misión del ahorro</h3>
-                <p className={styles.proyectoCopy}>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
-                  aliquam porro, est soluta magni quas harum recusandae maiores,
-                  sint quam impedit blanditiis fugiat, cum in natus! Doloribus
-                  dolorum voluptatem velit!
-                </p>
-              </div>
-            </div>
-            <div className={styles.proyecto}>
-              <div className={styles.proyectoMedio}>
-                <Image src="/home/proyecto.jpg" alt="proyecto" fill />
-              </div>
-              <div className={styles.proyectoInfo}>
-                <h4 className={styles.proyectoCliente}>Coopbueno</h4>
-                <h3 className={styles.proyectoNombre}>Misión del ahorro</h3>
-                <p className={styles.proyectoCopy}>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
-                  aliquam porro, est soluta magni quas harum recusandae maiores,
-                  sint quam impedit blanditiis fugiat, cum in natus! Doloribus
-                  dolorum voluptatem velit!
-                </p>
-              </div>
-            </div>
-            <div className={styles.proyecto}>
-              <div className={styles.proyectoMedio}>
-                <Image src="/home/proyecto.jpg" alt="proyecto" fill />
-              </div>
-              <div className={styles.proyectoInfo}>
-                <h4 className={styles.proyectoCliente}>Coopbueno</h4>
-                <h3 className={styles.proyectoNombre}>Misión del ahorro</h3>
-                <p className={styles.proyectoCopy}>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
-                  aliquam porro, est soluta magni quas harum recusandae maiores,
-                  sint quam impedit blanditiis fugiat, cum in natus! Doloribus
-                  dolorum voluptatem velit!
-                </p>
-              </div>
-            </div>
+            {proyectos.map((proyecto, key) => {
+              const { nombre, medio, cliente, slug, pilar } = proyecto;
+              return (
+                <Link
+                  href={`/proyecto/${slug}`}
+                  className={styles.proyecto}
+                  key={key}
+                >
+                  <div className={styles.proyectoMedio}>
+                    <Image
+                      src={getImageURL(medio.url)}
+                      alt={nombre}
+                      width={1920}
+                      height={1080}
+                    />
+                  </div>
+                  <div className={styles.proyectoInfo}>
+                    <h4 className={styles.proyectoCliente}>
+                      {cliente?.nombre}
+                    </h4>
+                    <h3 className={styles.proyectoNombre}>{nombre}</h3>
+                    <p className={styles.proyectoCopy}>{pilar?.nombre}</p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
           <div className={styles.proyectosMore}>
             <button className={styles.proyectosMoreBtn}>Cargar más</button>
@@ -236,91 +203,21 @@ export default async function Home() {
           </div>
           <div className={styles.listaClientes}>
             <div className={styles.listaClientesContainer}>
-              <div className={styles.cliente}>
-                <div className={styles.clienteMedio}>
-                  <Image src={"/home/cliente.svg"} alt="Nombre cliente" fill />
-                </div>
-              </div>
-              <div className={styles.cliente}>
-                <div className={styles.clienteMedio}>
-                  <Image src={"/home/cliente.svg"} alt="Nombre cliente" fill />
-                </div>
-              </div>
-              <div className={styles.cliente}>
-                <div className={styles.clienteMedio}>
-                  <Image src={"/home/cliente.svg"} alt="Nombre cliente" fill />
-                </div>
-              </div>
-              <div className={styles.cliente}>
-                <div className={styles.clienteMedio}>
-                  <Image src={"/home/cliente.svg"} alt="Nombre cliente" fill />
-                </div>
-              </div>
-              <div className={styles.cliente}>
-                <div className={styles.clienteMedio}>
-                  <Image src={"/home/cliente.svg"} alt="Nombre cliente" fill />
-                </div>
-              </div>
-              <div className={styles.cliente}>
-                <div className={styles.clienteMedio}>
-                  <Image src={"/home/cliente.svg"} alt="Nombre cliente" fill />
-                </div>
-              </div>
-              <div className={styles.cliente}>
-                <div className={styles.clienteMedio}>
-                  <Image src={"/home/cliente.svg"} alt="Nombre cliente" fill />
-                </div>
-              </div>
-              <div className={styles.cliente}>
-                <div className={styles.clienteMedio}>
-                  <Image src={"/home/cliente.svg"} alt="Nombre cliente" fill />
-                </div>
-              </div>
-              <div className={styles.cliente}>
-                <div className={styles.clienteMedio}>
-                  <Image src={"/home/cliente.svg"} alt="Nombre cliente" fill />
-                </div>
-              </div>
-              <div className={styles.cliente}>
-                <div className={styles.clienteMedio}>
-                  <Image src={"/home/cliente.svg"} alt="Nombre cliente" fill />
-                </div>
-              </div>
-              <div className={styles.cliente}>
-                <div className={styles.clienteMedio}>
-                  <Image src={"/home/cliente.svg"} alt="Nombre cliente" fill />
-                </div>
-              </div>
-              <div className={styles.cliente}>
-                <div className={styles.clienteMedio}>
-                  <Image src={"/home/cliente.svg"} alt="Nombre cliente" fill />
-                </div>
-              </div>
-              <div className={styles.cliente}>
-                <div className={styles.clienteMedio}>
-                  <Image src={"/home/cliente.svg"} alt="Nombre cliente" fill />
-                </div>
-              </div>
-              <div className={styles.cliente}>
-                <div className={styles.clienteMedio}>
-                  <Image src={"/home/cliente.svg"} alt="Nombre cliente" fill />
-                </div>
-              </div>
-              <div className={styles.cliente}>
-                <div className={styles.clienteMedio}>
-                  <Image src={"/home/cliente.svg"} alt="Nombre cliente" fill />
-                </div>
-              </div>
-              <div className={styles.cliente}>
-                <div className={styles.clienteMedio}>
-                  <Image src={"/home/cliente.svg"} alt="Nombre cliente" fill />
-                </div>
-              </div>
-              <div className={styles.cliente}>
-                <div className={styles.clienteMedio}>
-                  <Image src={"/home/cliente.svg"} alt="Nombre cliente" fill />
-                </div>
-              </div>
+              {clientes.map((cliente, key) => {
+                const { logo, nombre } = cliente;
+                return (
+                  <div className={styles.cliente} key={key}>
+                    <div className={styles.clienteMedio}>
+                      <Image
+                        src={getImageURL(logo.url)}
+                        alt={nombre}
+                        width={1920}
+                        height={1080}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

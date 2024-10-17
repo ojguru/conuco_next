@@ -1,0 +1,40 @@
+@import "@/styles/variables.module.scss";
+@import "@/styles/grid.module.scss";
+@import "@/styles/media.module.scss";
+@import "@/components/cta.module.scss";
+
+.portada {
+}
+
+.medio {
+  @extend %medio;
+  img {
+    aspect-ratio: 1/1;
+    @include mq(md) {
+      aspect-ratio: 2.39/1;
+    }
+  }
+}
+
+.info {
+  @include container();
+  margin-bottom: $space-thin;
+  margin-top: $space-thin;
+}
+
+.title {
+  font-weight: 900;
+  margin-top: initial;
+}
+
+.cliente {
+  margin-bottom: initial;
+  font-weight: 600;
+}
+
+.copy {
+}
+
+.contenido {
+  width: 100%;
+}

@@ -9,6 +9,7 @@
 %medio {
   position: relative;
   width: 100%;
+  background-color: $secondary-light;
 
   & > img {
     object-fit: cover;

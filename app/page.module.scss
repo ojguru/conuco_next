@@ -3,216 +3,274 @@
 @import "@/styles/media.module.scss";
 @import "@/components/cta.module.scss";
 
-.container{
+.container {
   @include container();
 }
 
-.title{
+.title {
   display: none;
 }
 
-.subTitleLabel{
+.subTitleLabel {
   text-transform: uppercase;
   color: $secondary-light;
   margin: 0;
   margin-bottom: 0rem;
 }
 
-.subTitle{
+.subTitle {
   text-transform: uppercase;
   margin: 0;
 }
 
-.cover{}
+.cover {
+}
 
-.coverVideo{
+.coverVideo {
   width: 100%;
 }
 
-.proyectos{}
+.proyectos {
+}
 
-.proyectosLista{
+.proyectosLista {
   display: grid;
   margin-top: 3rem;
-
-  @include mq(lg){
+  grid-template-columns: 1fr;
+  @include mq(xl) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
-.proyecto{
+.proyecto {
   position: relative;
-
-  & > div:first-of-type{
-    @extend %medio;
-    padding-bottom: 125%;
+  display: block;
+  margin-bottom: $space-thin;
+  @include mq(xl) {
+    margin: initial;
   }
 
-  & > div:nth-of-type(2){
-    position: absolute;
+  .proyectoMedio {
+    @extend %medio;
+    img {
+      aspect-ratio: 1/1;
+      @include mq(md) {
+        aspect-ratio: 2.39/1;
+      }
+      @include mq(xl) {
+        aspect-ratio: 1/1;
+      }
+    }
+  }
+
+  &:nth-of-type(odd) {
+    @include mq(md) {
+      .proyectoInfo {
+        left: 0;
+      }
+    }
+  }
+
+  &:nth-of-type(even) {
+    @include mq(md) {
+      .proyectoInfo {
+        right: 0;
+      }
+    }
+  }
+
+  &:first-of-type,
+  &:nth-of-type(2) {
+    @include mq(xl) {
+      grid-column: 1 / span 4;
+    }
+    margin-bottom: $space-thin;
+    .proyectoInfo {
+      @include mq(xl) {
+        width: 50%;
+        padding-right: 25%;
+        position: absolute;
+      }
+    }
+    .proyectoMedio {
+      @extend %medio;
+
+      img {
+        @include mq(xl) {
+          aspect-ratio: 2.39/1;
+        }
+      }
+    }
+  }
+  .proyectoInfo {
+    position: relative;
     background-color: $primary-base;
     color: white;
     bottom: 0;
-    left: 0;
     width: 100%;
-    padding: 1.5rem;
-
-    h3{
-      font-weight: 800;
-  margin: 0;
-  font-size: 2rem;
+    padding: $space-thin $space-thin;
+    height: 18rem;
+    @include mq(lg) {
+      width: 80%;
+      position: absolute;
     }
 
-    h4{
+    @include mq(xl) {
+      position: relative;
+      width: 100%;
+    }
+    h3 {
+      font-weight: 800;
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    h4 {
       margin: 0;
       font-size: 1.4rem;
       text-transform: uppercase;
     }
 
-    p{
-  margin: 0;
-
-    }
-  }
-
-  &:first-of-type, &:nth-of-type(2){
-    grid-column: 1 / span 4;
-    margin-bottom: 4rem;
-    & > div:first-of-type{
-      padding-bottom: 56.25%;
+    p {
+      margin: 0;
     }
   }
 }
 
-.proyectosMore{
+.proyectosMore {
   margin: $space-thin auto;
-  text-align: center
+  text-align: center;
 }
 
-.proyectosMoreBtn{
+.proyectosMoreBtn {
   @include cta();
 }
 
-.statement{
+.statement {
   margin: $space-medium auto;
 }
 
-.statementContainer{
+.statementContainer {
   display: grid;
   gap: 3rem;
-  @include mq(lg){
-
+  @include mq(lg) {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-.statementMedio{
+.statementMedio {
   @extend %medio;
   padding-bottom: 100%;
 }
 
-.servicios{
+.servicios {
   margin: $space-medium auto;
 }
 
-.listaServicios{
+.listaServicios {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   margin-top: 4rem;
-  @include mq(lg){
+  @include mq(lg) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
-.servicioMedio{
+.servicioMedio {
   @extend %medio;
   max-width: 10rem;
   margin: 0 auto;
   padding-bottom: 10rem;
-  img{
+  img {
     object-fit: contain;
   }
 }
 
-.servicioTitle{
+.servicioTitle {
   font-weight: 800;
   font-size: 1.8rem;
   text-align: center;
 }
 
-.servicioCopy{
+.servicioCopy {
   text-align: center;
 }
 
-.clientes{
+.clientes {
   margin: $space-medium auto;
 }
 
-.listaClientes{
+.listaClientes {
   background-color: $primary-base;
   padding: 4rem 0;
-  margin-top: 3rem
+  margin-top: 3rem;
 }
 
-.listaClientesContainer{
+.listaClientesContainer {
   @include container();
   display: grid;
   gap: 3rem;
   grid-template-columns: 1fr 1fr;
 
-  @include mq(md){
+  @include mq(md) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  @include mq(lg){
+  @include mq(lg) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
-
 }
 
-.clienteMedio{
+.clienteMedio {
   @extend %medio;
-  padding-bottom: 56.25%;
+  background-color: initial;
+  aspect-ratio: 16/9;
 
-  img{
+  img {
+    padding: 1.5rem;
     object-fit: contain;
+    aspect-ratio: inherit;
+    color: white;
+    svg {
+      color: inherit;
+    }
   }
 }
 
-.contacto{
+.contacto {
   position: relative;
   margin: $space-medium 0;
 
-  svg{
+  svg {
     position: absolute;
     bottom: 0;
     right: 0;
     color: $primary-base;
     width: 60%;
     transform: translate(50%, 80%);
-    @include mq(lg){
-      max-width:75rem ;
+    @include mq(lg) {
+      max-width: 75rem;
     }
   }
 }
 
-.contactoContainer{
+.contactoContainer {
   display: grid;
   gap: 3rem;
-  @include mq(lg){
-
+  @include mq(lg) {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-.contactoInfo{
-  a,p{
+.contactoInfo {
+  a,
+  p {
     display: block;
     margin: 0.5rem 0;
   }
-  
-  p{
+
+  p {
     margin-top: 4rem;
   }
 }

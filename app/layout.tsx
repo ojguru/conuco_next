@@ -13,7 +13,7 @@ const montserrat = Montserrat({
   weight: ["200", "300", "400", "600", "700", "800", "900"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--montserrat",
+  variable: "--montserat",
 });
 
 export const metadata = {
@@ -31,13 +31,9 @@ export default function RootLayout({
       <head></head>
       <body className={styles.body}>
         <ThemeProvider>
-          <Suspense>
-            <Header />
-          </Suspense>
+          {/* <Header /> */}
           <main className={styles.main}>{children}</main>
-          <Suspense>
-            <Footer />
-          </Suspense>
+          {/* <Footer /> */}
         </ThemeProvider>
       </body>
     </html>

@@ -23,15 +23,11 @@ export const MenuItemsFragment = `
 `;
 
 export const ImageFragment = `
-  data {
-    attributes {
-      url
-      width
-      height
-      alternativeText
-      mime
-    }
-  }
+  url
+  width
+  height
+  alternativeText
+  mime
 `;
 
 export const CTAFragment = `
