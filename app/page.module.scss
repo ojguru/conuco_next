@@ -124,7 +124,7 @@
       width: 80%;
     }
     @include mq(lg) {
-      // opacity: 0;
+      opacity: 0;
     }
 
     @include mq(xl) {
