@@ -53,15 +53,24 @@
     margin: initial;
   }
 
+  &:hover {
+    .proyectoInfo {
+      @include mq(lg) {
+        transition: all 0.25s ease-in-out;
+        opacity: 1;
+      }
+    }
+  }
+
   .proyectoMedio {
     @extend %medio;
     img {
-      aspect-ratio: 1/1;
+      aspect-ratio: 4/5;
       @include mq(md) {
-        aspect-ratio: 2.39/1;
+        aspect-ratio: 3.2/1;
       }
       @include mq(xl) {
-        aspect-ratio: 1/1;
+        aspect-ratio: 4/5;
       }
     }
   }
@@ -91,7 +100,6 @@
     .proyectoInfo {
       @include mq(xl) {
         width: 50%;
-        padding-right: 25%;
         position: absolute;
       }
     }
@@ -100,37 +108,44 @@
 
       img {
         @include mq(xl) {
-          aspect-ratio: 2.39/1;
+          aspect-ratio: 3.2/1;
         }
       }
     }
   }
   .proyectoInfo {
-    position: relative;
+    position: absolute;
+    bottom: 0;
     background-color: $primary-base;
     color: white;
-    bottom: 0;
-    width: 100%;
     padding: $space-thin $space-thin;
-    height: 18rem;
-    @include mq(lg) {
+    width: 100%;
+    @include mq(md) {
       width: 80%;
-      position: absolute;
+    }
+    @include mq(lg) {
+      // opacity: 0;
     }
 
     @include mq(xl) {
-      position: relative;
       width: 100%;
     }
     h3 {
+      @include h5m();
       font-weight: 800;
       margin: 0;
-      font-size: 2.5rem;
+      @include mq(md) {
+        max-height: 2.7rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
     }
 
     h4 {
       margin: 0;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
+      font-weight: 400;
       text-transform: uppercase;
     }
 
