@@ -49,6 +49,7 @@
   position: relative;
   display: block;
   margin-bottom: $space-thin;
+  overflow: hidden;
   @include mq(xl) {
     margin: initial;
   }
@@ -56,8 +57,8 @@
   &:hover {
     .proyectoInfo {
       @include mq(lg) {
-        transition: all 0.25s ease-in-out;
         opacity: 1;
+        bottom: 0;
       }
     }
   }
@@ -120,11 +121,13 @@
     color: white;
     padding: $space-thin $space-thin;
     width: 100%;
+    transition: opacity 0.3s ease-in-out, bottom 0.15s ease-in-out;
     @include mq(md) {
       width: 80%;
     }
     @include mq(lg) {
       opacity: 0;
+      bottom: -100rem;
     }
 
     @include mq(xl) {
