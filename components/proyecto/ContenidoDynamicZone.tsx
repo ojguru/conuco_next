@@ -3,6 +3,7 @@ import React from "react";
 import ProyectoImagenDosColumnas from "./ProyectoImagenDosColumnas";
 import ProyectoImagenAnchoCompleto from "./ProyectoImagenAnchoCompleto";
 import ProyectoContenido from "./ProyectoContenido";
+import Video from "../video";
 
 interface Props {
   component: ProyectoContenidoDynamicZone;
@@ -16,6 +17,8 @@ const ContenidoDynamicZone = ({ component }: Props) => {
     <ProyectoImagenAnchoCompleto component={component} />
   ) : component.__typename === "ComponentProyectoContenido" ? (
     <ProyectoContenido component={component} />
+  ) : component.__typename === "ComponentProyectoVideo" ? (
+    <Video component={component} />
   ) : null;
 };
 

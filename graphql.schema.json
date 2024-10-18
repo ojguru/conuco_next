@@ -1410,7 +1410,7 @@
               "name": null,
               "ofType": {
                 "kind": "SCALAR",
-                "name": "String",
+                "name": "JSON",
                 "ofType": null
               }
             },
@@ -1543,6 +1543,22 @@
               "ofType": {
                 "kind": "SCALAR",
                 "name": "ID",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "url",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               }
             },
@@ -6932,6 +6948,11 @@
           {
             "kind": "OBJECT",
             "name": "ComponentProyectoImagenDosColumnas",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "ComponentProyectoVideo",
             "ofType": null
           },
           {

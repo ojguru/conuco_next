@@ -43,13 +43,6 @@ export default async function Home({ params }: { params: { slug: string } }) {
   return (
     <>
       <div className={styles.portada}>
-        <h1 className={styles.title}>CONUCO</h1>
-        {/* VIDEO */}
-        <section className={styles.cover}>
-          <video autoPlay muted className={styles.coverVideo}>
-            <source src="/home/demoreel.webm" type="video/webm" />
-          </video>
-        </section>
         {/* POSITION STATEMENT */}
         <section className={styles.statement}>
           <div className={`${styles.container} ${styles.statementContainer}`}>
@@ -57,9 +50,9 @@ export default async function Home({ params }: { params: { slug: string } }) {
               <Image src="/home/statement.png" alt="Position Statement" fill />
             </div>
             <div className={styles.statementInfo}>
-              <h2 className={styles.subTitle}>
+              <h1 className={styles.title}>
                 El centro de la innovación es el diseño y de este, la gente.
-              </h2>
+              </h1>
               <p>
                 Nos dedicamos a conectar la identidad de las marcas con las
                 personas, generarando cambios por medio de sus productos que

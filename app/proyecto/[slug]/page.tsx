@@ -38,6 +38,10 @@ const QUERY = `
                         ${ImageFragment}
                     }
                 }
+                ...on ComponentProyectoVideo{
+                  __typename
+                  url
+                }
             }
         }
     }
@@ -97,7 +101,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
           />
         </div>
         <div className={styles.info}>
-          <h3 className={styles.cliente}>{cliente?.nombre}</h3>
+          <h2 className={styles.cliente}>{cliente?.nombre}</h2>
           <h1 className={styles.title}>{nombre}</h1>
           <p className={styles.copy}>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit

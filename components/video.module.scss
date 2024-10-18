@@ -1,0 +1,48 @@
+@import "../styles/variables.module.scss";
+@import "../styles/mixins.scss";
+@import "../styles/grid.module.scss";
+@import "../styles/tipography.module.scss";
+@import "@/styles/general.module.scss";
+
+.container {
+  @include container();
+  margin-bottom: $space-large;
+  margin-top: $space-large;
+
+  .wrapper {
+    width: 100%;
+    padding-bottom: 56.25%;
+    position: relative;
+
+    & > div,
+    iframe {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    &:before {
+      content: "";
+      width: 100%;
+      height: calc(100% + 1rem);
+      right: 80%;
+      background-color: $primary-base;
+      position: absolute;
+      bottom: 10%;
+      z-index: 0;
+    }
+    &:after {
+      content: "";
+      width: 100%;
+      height: calc(100% + 1rem);
+      left: 80%;
+      background-color: $secondary-base;
+      position: absolute;
+      top: 10%;
+      z-index: 0;
+    }
+  }
+}

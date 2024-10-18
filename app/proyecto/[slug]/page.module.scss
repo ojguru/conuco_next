@@ -1,6 +1,7 @@
 @import "@/styles/variables.module.scss";
 @import "@/styles/grid.module.scss";
 @import "@/styles/media.module.scss";
+@import "@/styles/tipography.module.scss";
 @import "@/components/cta.module.scss";
 
 .portada {
@@ -11,7 +12,7 @@
   img {
     aspect-ratio: 1/1;
     @include mq(md) {
-      aspect-ratio: 2.39/1;
+      aspect-ratio: 3.2/1;
     }
   }
 }
@@ -29,7 +30,9 @@
 
 .cliente {
   margin-bottom: initial;
-  font-weight: 600;
+  font-weight: 400;
+  color: $secondary-light;
+  @include h4m();
 }
 
 .copy {

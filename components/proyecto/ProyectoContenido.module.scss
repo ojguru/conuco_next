@@ -1,10 +1,41 @@
 @import "@/styles/variables.module.scss";
 @import "@/styles/grid.module.scss";
 @import "@/styles/media.module.scss";
+@import "@/styles/tipography.module.scss";
 @import "@/components/cta.module.scss";
 
 .container {
   @include container();
+  width: 80rem !important;
   margin-bottom: $space-small;
   margin-top: $space-small;
+  @include mq(md) {
+    margin-bottom: $space-large;
+    margin-top: $space-large;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 10rem;
+    height: 2rem;
+    background-color: $primary-base;
+    top: -$space-small;
+    @include mq(md) {
+      width: 14.5rem;
+      height: 3.5rem;
+      top: -$space-large;
+    }
+  }
+
+  h2 {
+    font-weight: 700;
+  }
+  h3 {
+    font-weight: 500;
+  }
+  h4 {
+    font-weight: 400;
+  }
 }

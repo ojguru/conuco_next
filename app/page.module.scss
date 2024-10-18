@@ -2,13 +2,14 @@
 @import "@/styles/grid.module.scss";
 @import "@/styles/media.module.scss";
 @import "@/components/cta.module.scss";
+@import "@/styles/tipography.module.scss";
 
 .container {
   @include container();
 }
 
 .title {
-  display: none;
+  @include titleDeco();
 }
 
 .subTitleLabel {
@@ -16,11 +17,13 @@
   color: $secondary-light;
   margin: 0;
   margin-bottom: 0rem;
+  @include h6m();
 }
 
 .subTitle {
   text-transform: uppercase;
   margin: 0;
+  font-weight: 700;
 }
 
 .cover {
@@ -153,6 +156,7 @@
 .statementContainer {
   display: grid;
   gap: 3rem;
+  align-items: center;
   @include mq(lg) {
     grid-template-columns: 1fr 1fr;
   }
