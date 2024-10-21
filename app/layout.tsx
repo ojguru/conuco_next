@@ -31,9 +31,9 @@ export default function RootLayout({
       <head></head>
       <body className={styles.body}>
         <ThemeProvider>
-          {/* <Header /> */}
+          <Header />
           <main className={styles.main}>{children}</main>
-          {/* <Footer /> */}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

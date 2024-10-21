@@ -40,13 +40,13 @@
   position: relative;
   z-index: 20001;
   transform-origin: center top;
-  width: 6rem;
+  width: 8rem;
   transform-origin: center center;
   @include mq(lg) {
-    width: 7rem;
+    width: 12.5rem;
   }
   img {
-    aspect-ratio: 1/0.85;
+    aspect-ratio: 19/9;
     max-width: 100%;
     margin: 0 auto;
     margin-top: 7.25%;

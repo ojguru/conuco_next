@@ -1,8 +1,10 @@
 import styles from "@/app/page.module.scss";
+import Formulario from "@/components/Formulario";
 import { Palmera } from "@/components/icons";
 import { ImageFragment } from "@/fragments/GeneralSettings";
 import { Cliente, Proyecto } from "@/gql/graphql";
 import { fetchAPI, getImageURL } from "@/lib/api";
+import { HUBSPOT_CONTACT_FORM } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -226,7 +228,12 @@ export default async function Home({ params }: { params: { slug: string } }) {
               <Link href={`tel:8099710771`}>Tel: 809-971-0771</Link>
               <Link href={`mailto: info@conuco.do`}>Email: info@conuco.do</Link>
             </div>
-            <div className={styles.contactoForm}>AQUI VA EL FORMULARIO</div>
+            <div className={styles.contactoForm}>
+              <Formulario
+                formulario={HUBSPOT_CONTACT_FORM}
+                formUID="b45ec825-dd54-4818-88ea-02d0a9e2072b"
+              />
+            </div>
           </div>
           <Palmera />
         </section>

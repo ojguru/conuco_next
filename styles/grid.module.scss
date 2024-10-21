@@ -1,10 +1,10 @@
 @import "./mixins.scss";
 
-$sm: 540px;
-$md: 720px;
-$lg: 960px;
-$xl: 1140px;
-
+$gap: 15%;
+$sm: calc(540px + $gap);
+$md: calc(720px + $gap);
+$lg: calc(960px + $gap);
+$xl: calc(1140px + $gap);
 $space-thin: 4rem;
 $space-small: 8rem;
 $space-medium: 12rem;
@@ -12,7 +12,7 @@ $space-large: 15rem;
 
 @mixin baseContainer {
   width: 100%;
-  max-width: 90%;
+  padding: 0 7.5%;
   position: relative;
   margin: 0 auto;
 }

@@ -11,7 +11,7 @@ const ProyectoContenido = ({ component }: Props) => {
 
   return component?.__typename === "ComponentProyectoContenido" ? (
     <div className={styles.container}>
-      {texto.map((element, key) => {
+      {texto.map((element: any, key: number) => {
         return element.type === "paragraph" ? (
           <Paragraph element={element.children} key={key} />
         ) : element.type === "heading" ? (
@@ -26,7 +26,7 @@ const ProyectoContenido = ({ component }: Props) => {
 
 export default ProyectoContenido;
 
-const style = (element) => {
+const style = (element: any) => {
   return {
     textDecoration: `${element?.underline ? "underline" : ""}${
       element?.strikethrough ? " line-through" : ""
@@ -36,18 +36,18 @@ const style = (element) => {
   };
 };
 
-const Jerarquia = ({ element }) => {
+const Jerarquia = ({ element }: { element: any }) => {
   return element.type === "text" ? (
     <span style={style(element)}>{element.text}</span>
   ) : element.type === "link" ? (
     <Link href={element.url} style={style(element)}>
-      {element.children.map((element, key) => {
+      {element.children.map((element: any, key: number) => {
         return <Jerarquia element={element} key={key} />;
       })}
     </Link>
   ) : element.type === "list-item" ? (
     <li>
-      {element.children.map((element, key) => {
+      {element.children.map((element: any, key: number) => {
         return <Jerarquia element={element} key={key} />;
       })}
     </li>
@@ -57,7 +57,7 @@ const Jerarquia = ({ element }) => {
 const Paragraph = ({ element }: { element: any }) => {
   return (
     <p>
-      {element.map((item, key) => {
+      {element.map((item: any, key: number) => {
         return <Jerarquia element={item} key={key} />;
       })}
     </p>
@@ -67,19 +67,19 @@ const Paragraph = ({ element }: { element: any }) => {
 const Heading = ({ element, level }: { element: any; level: number }) => {
   return level === 1 ? (
     <h2>
-      {element.map((item, key) => {
+      {element.map((item: any, key: number) => {
         return <Jerarquia element={item} key={key} />;
       })}
     </h2>
   ) : level === 2 ? (
     <h3>
-      {element.map((item, key) => {
+      {element.map((item: any, key: number) => {
         return <Jerarquia element={item} key={key} />;
       })}
     </h3>
   ) : (
     <h4>
-      {element.map((item, key) => {
+      {element.map((item: any, key: number) => {
         return <Jerarquia element={item} key={key} />;
       })}
     </h4>
@@ -89,13 +89,13 @@ const Heading = ({ element, level }: { element: any; level: number }) => {
 const List = ({ element, format }: { element: any; format: string }) => {
   return format === "ordered" ? (
     <ol>
-      {element.map((item, key) => {
+      {element.map((item: any, key: number) => {
         return <Jerarquia element={item} key={key} />;
       })}
     </ol>
   ) : format === "unordered" ? (
     <ul>
-      {element.map((item, key) => {
+      {element.map((item: any, key: number) => {
         return <Jerarquia element={item} key={key} />;
       })}
     </ul>

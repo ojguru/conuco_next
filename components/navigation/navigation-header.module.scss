@@ -1,4 +1,5 @@
-@import "../../styles/mixins.scss";
+@import "@/styles/mixins.scss";
+@import "@/styles/variables.module.scss";
 
 .menu {
   display: none;
@@ -15,16 +16,18 @@
 
 .containerSplit {
   display: flex;
-  gap: 0.25rem 1rem;
+  gap: 0.25rem 3rem;
   flex-flow: row wrap;
   justify-content: flex-end;
 }
 
 .label {
-  font-weight: 500;
+  font-weight: 700;
   cursor: pointer;
   text-decoration: none;
   font-size: 1.8rem;
+  text-transform: uppercase;
+  color: $secondary-base;
 }
 
 .navBox {

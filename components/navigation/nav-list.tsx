@@ -1,6 +1,6 @@
 import React from "react";
 import NavItem from "./nav-item";
-import { MenusMenuItemEntity } from "@/gql/graphql";
+import { MenusMenuItemEntity } from "@/lib/types";
 import { MenuItem } from "@/lib/auxiliar";
 import styles from "./nav-list.module.scss";
 

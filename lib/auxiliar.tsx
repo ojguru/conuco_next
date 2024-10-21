@@ -1,4 +1,4 @@
-import { MenusMenuItemEntity } from "@/gql/graphql";
+import { MenusMenuItemEntity } from "@/lib/types";
 
 export interface MenuItem {
   item: MenusMenuItemEntity;

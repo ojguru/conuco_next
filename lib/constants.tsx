@@ -5,7 +5,8 @@ export const SITE_DESCRIPTION =
   "Prestadora de Servicios de Salud Preventis; somos un centro de salud integral constituido en República Dominicana desde mayo de 2007...";
 
 //CONFIGURACION DE HUBSPOT
-export const HUBSPOT_ID = 21258552;
+export const HUBSPOT_ID = 2277995;
+export const HUBSPOT_CONTACT_FORM = "b45ec825-dd54-4818-88ea-02d0a9e2072b";
 
 //INFORMACION DE CONTACTO
 export const FACEBOOK = "https://www.facebook.com/Preventis1";

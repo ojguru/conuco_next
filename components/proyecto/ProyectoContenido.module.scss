@@ -6,7 +6,7 @@
 
 .container {
   @include container();
-  width: 80rem !important;
+  max-width: calc(80rem + ($gap)) !important;
   margin-bottom: $space-small;
   margin-top: $space-small;
   @include mq(md) {
@@ -17,7 +17,6 @@
   &::before {
     content: "";
     position: absolute;
-    left: 0;
     width: 10rem;
     height: 2rem;
     background-color: $primary-base;

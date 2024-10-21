@@ -1,5 +1,5 @@
 import React from "react";
-import { MenusMenuItemEntity } from "@/gql/graphql";
+import { MenusMenuItemEntity } from "@/lib/types";
 import Image from "next/image";
 import Navigation from "./navigation/navigation";
 import { getHierarchicalItems, MenuItem } from "@/lib/auxiliar";
@@ -20,10 +20,56 @@ const QUERY = `
 
 const queryVars = {};
 
-export default async function Footer() {
-  const data = await fetchAPI(QUERY, { variables: queryVars });
+const menu: MenusMenuItemEntity[] = [
+  // {
+  //   attributes: {
+  //     title: "Inicio",
+  //     url: "/",
+  //     target: "",
+  //     parent: null,
+  //     root_menu: {
+  //       data: {
+  //         attributes: {
+  //           slug: "header",
+  //         },
+  //       },
+  //     },
+  //   },
+  // },
+  // {
+  //   attributes: {
+  //     title: "About",
+  //     url: "/",
+  //     target: "",
+  //     parent: null,
+  //     root_menu: {
+  //       data: {
+  //         attributes: {
+  //           slug: "header",
+  //         },
+  //       },
+  //     },
+  //   },
+  // },
+  // {
+  //   attributes: {
+  //     title: "Contacto",
+  //     url: "/",
+  //     target: "",
+  //     parent: null,
+  //     root_menu: {
+  //       data: {
+  //         attributes: {
+  //           slug: "header",
+  //         },
+  //       },
+  //     },
+  //   },
+  // },
+];
 
-  const menuItems: MenusMenuItemEntity[] = data?.menuItems.data;
+export default async function Footer() {
+  const menuItems: MenusMenuItemEntity[] = menu;
 
   const items = [...getHierarchicalItems(menuItems)] as MenuItem[];
 

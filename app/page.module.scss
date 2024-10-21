@@ -168,7 +168,10 @@
 }
 
 .statement {
-  margin: $space-medium auto;
+  margin: $space-thin auto;
+  @include mq(md) {
+    margin: $space-medium auto;
+  }
 }
 
 .statementContainer {
@@ -220,7 +223,8 @@
 }
 
 .clientes {
-  margin: $space-medium auto;
+  margin: 0 auto;
+  margin-top: $space-medium;
 }
 
 .listaClientes {
@@ -262,7 +266,8 @@
 
 .contacto {
   position: relative;
-  margin: $space-medium 0;
+  overflow: hidden;
+  background-color: #f0f0f0;
 
   svg {
     position: absolute;
@@ -270,7 +275,8 @@
     right: 0;
     color: $primary-base;
     width: 60%;
-    transform: translate(50%, 80%);
+    transform: translate(50%, 70%);
+    z-index: 1;
     @include mq(lg) {
       max-width: 75rem;
     }
@@ -279,6 +285,7 @@
 
 .contactoContainer {
   display: grid;
+  margin: $space-medium auto;
   gap: 3rem;
   @include mq(lg) {
     grid-template-columns: 1fr 1fr;
@@ -294,5 +301,38 @@
 
   p {
     margin-top: 4rem;
+  }
+}
+
+.contactoForm {
+  padding: 4rem 2.5rem;
+  position: relative;
+  display: grid;
+  align-items: center;
+
+  @include mq(md) {
+    padding: $space-small;
+  }
+
+  section {
+    z-index: 3;
+  }
+
+  &:before {
+    content: "";
+    border-radius: 2.5rem;
+    border: 0.4rem solid white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(white, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+
+    @include mq(md) {
+      border-radius: 5rem;
+    }
   }
 }

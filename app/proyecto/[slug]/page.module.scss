@@ -21,6 +21,10 @@
   @include container();
   margin-bottom: $space-thin;
   margin-top: $space-thin;
+  @include mq(md) {
+    margin-bottom: $space-small;
+    margin-top: $space-small;
+  }
 }
 
 .title {
@@ -35,7 +39,8 @@
   @include h4m();
 }
 
-.copy {
+.caption {
+  max-width: 80rem;
 }
 
 .contenido {

@@ -7,11 +7,13 @@ import Image from "next/image";
 import styles from "./page.module.scss";
 import ProyectoImagenDosColumnas from "@/components/proyecto/ProyectoImagenDosColumnas";
 import ContenidoDynamicZone from "@/components/proyecto/ContenidoDynamicZone";
+import { notFound } from "next/navigation";
 
 const QUERY = `
     query ProyectoQuery($slug:String!) {
         proyectos(filters:{slug:{eq:$slug}}){
             nombre
+            caption
             medio{
                 ${ImageFragment}
             }
@@ -60,6 +62,11 @@ export async function generateMetadata({
   });
 
   const [proyecto]: [Proyecto] = data.proyectos;
+
+  if (!proyecto) {
+    notFound();
+  }
+
   const { nombre, medio } = proyecto;
 
   return {
@@ -85,8 +92,10 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   const data = await fetchAPI(QUERY, {
     variables: { ...queryVars, ...params },
   });
+
   const [proyecto]: [Proyecto] = data.proyectos;
-  const { nombre, medio, cliente, contenido } = proyecto;
+
+  const { nombre, caption, medio, cliente, contenido } = proyecto;
 
   return (
     <>
@@ -103,15 +112,7 @@ const Page = async ({ params }: { params: { slug: string } }) => {
         <div className={styles.info}>
           <h2 className={styles.cliente}>{cliente?.nombre}</h2>
           <h1 className={styles.title}>{nombre}</h1>
-          <p className={styles.copy}>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-            esse tempore, iusto sed non animi repudiandae sunt! Explicabo
-            perferendis ullam iusto ut deleniti repellat non omnis. Sequi soluta
-            libero nemo! Lorem ipsum, dolor sit amet consectetur adipisicing
-            elit. Corporis voluptates esse magni, maiores deleniti ipsa unde sed
-            repellendus laborum obcaecati inventore dolores porro perspiciatis
-            voluptatibus possimus alias tempore quidem! Enim.
-          </p>
+          <p className={styles.caption}>{caption}</p>
         </div>
       </section>
       <section className={styles.contenido}>
