@@ -722,7 +722,7 @@ export type Proyecto = {
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
-export type ProyectoContenidoDynamicZone = ComponentProyectoContenido | ComponentProyectoImagenAnchoCompleto | ComponentProyectoImagenDosColumnas | ComponentProyectoLocalVideo | ComponentProyectoVideo | Error;
+export type ProyectoContenidoDynamicZone = ComponentProyectoContenido | ComponentProyectoImagenAnchoCompleto | ComponentProyectoImagenDosColumnas | ComponentProyectoLocalVideo | Error;
 
 export type ProyectoEntityResponseCollection = {
   __typename?: 'ProyectoEntityResponseCollection';
@@ -1501,7 +1501,7 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 /** Mapping of union types */
 export type ResolversUnionTypes<_RefType extends Record<string, unknown>> = {
   GenericMorph: ( Omit<Cliente, 'logo' | 'proyectos' | 'proyectos_connection'> & { logo: _RefType['UploadFile'], proyectos: Array<Maybe<_RefType['Proyecto']>>, proyectos_connection?: Maybe<_RefType['ProyectoRelationResponseCollection']> } ) | ( ComponentComponentsContacto ) | ( ComponentComponentsFormulario ) | ( ComponentProyectoContenido ) | ( Omit<ComponentProyectoImagenAnchoCompleto, 'medio'> & { medio: _RefType['UploadFile'] } ) | ( Omit<ComponentProyectoImagenDosColumnas, 'medio1' | 'medio2'> & { medio1: _RefType['UploadFile'], medio2: _RefType['UploadFile'] } ) | ( Omit<ComponentProyectoLocalVideo, 'cover' | 'medio'> & { cover: _RefType['UploadFile'], medio: _RefType['UploadFile'] } ) | ( ComponentProyectoVideo ) | ( Omit<Empleado, 'foto'> & { foto: _RefType['UploadFile'] } ) | ( I18NLocale ) | ( Omit<Pilar, 'icono' | 'medio' | 'proyectos' | 'proyectos_connection'> & { icono: _RefType['UploadFile'], medio: _RefType['UploadFile'], proyectos: Array<Maybe<_RefType['Proyecto']>>, proyectos_connection?: Maybe<_RefType['ProyectoRelationResponseCollection']> } ) | ( Omit<Proyecto, 'cliente' | 'contenido' | 'medio' | 'pilar'> & { cliente?: Maybe<_RefType['Cliente']>, contenido?: Maybe<Array<Maybe<_RefType['ProyectoContenidoDynamicZone']>>>, medio: _RefType['UploadFile'], pilar?: Maybe<_RefType['Pilar']> } ) | ( ReviewWorkflowsWorkflow ) | ( ReviewWorkflowsWorkflowStage ) | ( Omit<UploadFile, 'related'> & { related?: Maybe<Array<Maybe<_RefType['GenericMorph']>>> } ) | ( UsersPermissionsPermission ) | ( UsersPermissionsRole ) | ( UsersPermissionsUser );
-  ProyectoContenidoDynamicZone: ( ComponentProyectoContenido ) | ( Omit<ComponentProyectoImagenAnchoCompleto, 'medio'> & { medio: _RefType['UploadFile'] } ) | ( Omit<ComponentProyectoImagenDosColumnas, 'medio1' | 'medio2'> & { medio1: _RefType['UploadFile'], medio2: _RefType['UploadFile'] } ) | ( Omit<ComponentProyectoLocalVideo, 'cover' | 'medio'> & { cover: _RefType['UploadFile'], medio: _RefType['UploadFile'] } ) | ( ComponentProyectoVideo ) | ( Error );
+  ProyectoContenidoDynamicZone: ( ComponentProyectoContenido ) | ( Omit<ComponentProyectoImagenAnchoCompleto, 'medio'> & { medio: _RefType['UploadFile'] } ) | ( Omit<ComponentProyectoImagenDosColumnas, 'medio1' | 'medio2'> & { medio1: _RefType['UploadFile'], medio2: _RefType['UploadFile'] } ) | ( Omit<ComponentProyectoLocalVideo, 'cover' | 'medio'> & { cover: _RefType['UploadFile'], medio: _RefType['UploadFile'] } ) | ( Error );
 };
 
 
@@ -1896,7 +1896,7 @@ export type ProyectoResolvers<ContextType = any, ParentType extends ResolversPar
 };
 
 export type ProyectoContenidoDynamicZoneResolvers<ContextType = any, ParentType extends ResolversParentTypes['ProyectoContenidoDynamicZone'] = ResolversParentTypes['ProyectoContenidoDynamicZone']> = {
-  __resolveType: TypeResolveFn<'ComponentProyectoContenido' | 'ComponentProyectoImagenAnchoCompleto' | 'ComponentProyectoImagenDosColumnas' | 'ComponentProyectoLocalVideo' | 'ComponentProyectoVideo' | 'Error', ParentType, ContextType>;
+  __resolveType: TypeResolveFn<'ComponentProyectoContenido' | 'ComponentProyectoImagenAnchoCompleto' | 'ComponentProyectoImagenDosColumnas' | 'ComponentProyectoLocalVideo' | 'Error', ParentType, ContextType>;
 };
 
 export interface ProyectoContenidoDynamicZoneInputScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['ProyectoContenidoDynamicZoneInput'], any> {

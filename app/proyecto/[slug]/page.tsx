@@ -5,7 +5,6 @@ import { fetchAPI, getImageURL } from "@/lib/api";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 import Image from "next/image";
 import styles from "./page.module.scss";
-import ProyectoImagenDosColumnas from "@/components/proyecto/ProyectoImagenDosColumnas";
 import ContenidoDynamicZone from "@/components/proyecto/ContenidoDynamicZone";
 import { notFound } from "next/navigation";
 
@@ -39,10 +38,6 @@ const QUERY = `
                     medio2 {
                         ${ImageFragment}
                     }
-                }
-                ...on ComponentProyectoVideo{
-                  __typename
-                  url
                 }
                 
                 ...on ComponentProyectoLocalVideo{
