@@ -1,18 +1,42 @@
 "use client";
-import React, { Suspense } from "react";
+import React, { useState } from "react";
 import ReactPlayer from "react-player";
 import styles from "./video.module.scss";
-import { ComponentProyectoVideo } from "@/gql/graphql";
+import Image from "next/image";
+import { ComponentProyectoLocalVideo } from "@/gql/graphql";
+import { getImageURL } from "@/lib/api";
 
 interface Props {
-  component: ComponentProyectoVideo;
+  component: ComponentProyectoLocalVideo;
 }
 const Video = ({ component }: Props) => {
-  const { url } = component;
+  const { medio, cover } = component;
+  const [playing, setPlaying] = useState(false);
   return (
     <div className={styles.container}>
-      <div className={styles.wrapper}>
-        <ReactPlayer url={url} id="ProyectoVideo" />;
+      <div
+        className={styles.wrapper}
+        onClick={() => {
+          if (!playing) {
+            setPlaying(true);
+          }
+        }}
+      >
+        <ReactPlayer
+          url={getImageURL(medio.url)}
+          id="ProyectoVideo"
+          controls
+          light={
+            <Image
+              src={getImageURL(cover.url)}
+              width={1920}
+              height={1080}
+              alt={cover.alternativeText ?? ""}
+            />
+          }
+          playing={playing}
+        />
+        ;
       </div>
     </div>
   );

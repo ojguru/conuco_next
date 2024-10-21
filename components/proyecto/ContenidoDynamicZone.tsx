@@ -4,6 +4,7 @@ import ProyectoImagenDosColumnas from "./ProyectoImagenDosColumnas";
 import ProyectoImagenAnchoCompleto from "./ProyectoImagenAnchoCompleto";
 import ProyectoContenido from "./ProyectoContenido";
 import Video from "../video";
+import { getImageURL } from "@/lib/api";
 
 interface Props {
   component: ProyectoContenidoDynamicZone;
@@ -18,6 +19,8 @@ const ContenidoDynamicZone = ({ component }: Props) => {
   ) : component.__typename === "ComponentProyectoContenido" ? (
     <ProyectoContenido component={component} />
   ) : component.__typename === "ComponentProyectoVideo" ? (
+    <Video url={component.url ?? ""} />
+  ) : component.__typename === "ComponentProyectoLocalVideo" ? (
     <Video component={component} />
   ) : null;
 };

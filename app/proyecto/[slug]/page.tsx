@@ -44,6 +44,16 @@ const QUERY = `
                   __typename
                   url
                 }
+                
+                ...on ComponentProyectoLocalVideo{
+                  __typename
+                  medio{
+                    url
+                  }
+                  cover{
+                    ${ImageFragment}
+                  }
+                }
             }
         }
     }
