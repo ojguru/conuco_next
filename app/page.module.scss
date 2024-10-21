@@ -121,13 +121,13 @@
     color: white;
     padding: $space-thin $space-thin;
     width: 100%;
-    transition: opacity 0.3s ease-in-out, bottom 0.15s ease-in-out;
+    transition: opacity 0.3s ease-in, bottom 0.15s ease-in;
     @include mq(md) {
       width: 80%;
     }
     @include mq(lg) {
       opacity: 0;
-      bottom: -100rem;
+      bottom: -12.5rem;
     }
 
     @include mq(xl) {

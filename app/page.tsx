@@ -4,7 +4,12 @@ import { Palmera } from "@/components/icons";
 import { ImageFragment } from "@/fragments/GeneralSettings";
 import { Cliente, Proyecto } from "@/gql/graphql";
 import { fetchAPI, getImageURL } from "@/lib/api";
-import { HUBSPOT_CONTACT_FORM } from "@/lib/constants";
+import {
+  HUBSPOT_CONTACT_FORM,
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  SITE_URL,
+} from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -33,6 +38,25 @@ const QUERY = `
 `;
 
 const queryVars = {};
+
+// Dynamic metadata
+export const metadata = {
+  title: `${SITE_NAME}`,
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    title: `${SITE_NAME}`,
+    description: SITE_DESCRIPTION,
+    url: `${SITE_URL}`,
+    siteName: SITE_NAME,
+    // images: [
+    //   {
+    //     url: getImageURL(medio.url),
+    //     width: 800,
+    //     height: 600,
+    //   },
+    // ],
+  },
+};
 
 export default async function Home({ params }: { params: { slug: string } }) {
   const data = await fetchAPI(QUERY, {

@@ -1,6 +1,6 @@
 //CONFIGURACION SEO
 export const SITE_URL = "https://conuco.do";
-export const SITE_NAME = "CONUCO";
+export const SITE_NAME = "Agencia Creativa Conuco";
 export const SITE_DESCRIPTION = "Agencia Creativa Conuco";
 
 //CONFIGURACION DE HUBSPOT
