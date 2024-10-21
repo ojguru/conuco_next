@@ -112,7 +112,7 @@ export default async function Footer() {
             href={FACEBOOK}
             target="_blank"
             rel="noreferrer noopener"
-            aria-label="Facebook Preventis"
+            aria-label="Facebook Agencia Creativa Conuco"
           >
             <div
               className={styles.socialIcon}
@@ -126,7 +126,7 @@ export default async function Footer() {
             href={INSTAGRAM}
             target="_blank"
             rel="noreferrer noopener"
-            aria-label="Instagram Preventis"
+            aria-label="Instagram Agencia Creativa Conuco"
           >
             <div
               className={styles.socialIcon}
@@ -140,7 +140,7 @@ export default async function Footer() {
             href={TWITTER}
             target="_blank"
             rel="noreferrer noopener"
-            aria-label="Twitter Preventis"
+            aria-label="Twitter Agencia Creativa Conuco"
           >
             <div
               className={styles.socialIcon}
@@ -154,7 +154,11 @@ export default async function Footer() {
         <div className={styles.bottom}>
           <p>2023 Agencia Creativa Conuco</p>
           <div className={styles.logo}>
-            <Image src="/site/logo_footer.svg" alt="Logo Preventis" fill />
+            <Image
+              src="/site/logo_footer.svg"
+              alt="Logo Agencia Creativa Conuco"
+              fill
+            />
           </div>
         </div>
       </div>

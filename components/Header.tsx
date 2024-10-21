@@ -4,7 +4,6 @@ import Image from "next/image";
 import logo from "@/public/site/logo.svg";
 import { getHierarchicalItems } from "@/lib/auxiliar";
 import NavigationHeader from "@/components/navigation/navigation-header";
-import { CITA, RESULTADOS } from "@/lib/constants";
 import styles from "./header.module.scss";
 import { MenuItemsFragment } from "@/fragments/GeneralSettings";
 import { fetchAPI } from "@/lib/api";

@@ -39,7 +39,6 @@ const QUERY = `
                         ${ImageFragment}
                     }
                 }
-                
                 ...on ComponentProyectoLocalVideo{
                   __typename
                   medio{

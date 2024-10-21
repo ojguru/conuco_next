@@ -9,13 +9,7 @@ import {
   TwitterIcon,
 } from "@/components/icons";
 import Link from "next/link";
-import {
-  CITA,
-  FACEBOOK,
-  INSTAGRAM,
-  RESULTADOS,
-  TWITTER,
-} from "@/lib/constants";
+import { FACEBOOK, INSTAGRAM, TWITTER } from "@/lib/constants";
 import { animated, config, useSpring } from "@react-spring/web";
 import styles from "@/styles/use-menu.module.scss";
 import { ThemeContext } from "@/components/ThemeProvider";
@@ -62,30 +56,7 @@ const useMenu = () => {
         >
           <div className={`${styles.modal} ${isMenuOpen ? "active" : ""}`}>
             <div className={`${styles.modalHeader}`}>
-              <div className={styles.portalWriter}>
-                <Link
-                  href={CITA}
-                  onClick={(e) => {
-                    setMenuOpen(false);
-                  }}
-                >
-                  <div className={styles.portalItem}>
-                    {/* <UserIcon /> */}
-                    <span>Agendar cita</span>
-                  </div>
-                </Link>
-                <Link
-                  href={RESULTADOS}
-                  onClick={(e) => {
-                    setMenuOpen(false);
-                  }}
-                >
-                  <div className={styles.portalItem}>
-                    {/* <UserIcon /> */}
-                    <span>Resultados</span>
-                  </div>
-                </Link>
-              </div>
+              <div className={styles.portalWriter}></div>
             </div>
             <div className={styles.body}>{children}</div>
             <div className={styles.footer}>
@@ -94,7 +65,7 @@ const useMenu = () => {
                   href={FACEBOOK}
                   target="_blank"
                   rel="noreferrer noopener"
-                  aria-label="Facebook Preventis"
+                  aria-label="Facebook Agencia Creativa Conuco"
                 >
                   <div className={styles.socialIcon}>
                     <div style={{ display: "none" }}>Redes Sociales</div>
@@ -105,7 +76,7 @@ const useMenu = () => {
                   href={INSTAGRAM}
                   target="_blank"
                   rel="noreferrer noopener"
-                  aria-label="Facebook Preventis"
+                  aria-label="Facebook Agencia Creativa Conuco"
                 >
                   <div className={styles.socialIcon}>
                     <div style={{ display: "none" }}>Redes Sociales</div>
@@ -116,7 +87,7 @@ const useMenu = () => {
                   href={TWITTER}
                   target="_blank"
                   rel="noreferrer noopener"
-                  aria-label="Facebook Preventis"
+                  aria-label="Facebook Agencia Creativa Conuco"
                 >
                   <div className={styles.socialIcon}>
                     <div style={{ display: "none" }}>Redes Sociales</div>
