@@ -236,14 +236,18 @@
 .listaClientesContainer {
   @include container();
   display: grid;
-  gap: 3rem;
+  gap: 2rem 5rem;
   grid-template-columns: 1fr 1fr;
 
   @include mq(md) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   @include mq(lg) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  @include mq(xl) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
@@ -254,7 +258,7 @@
   aspect-ratio: 16/9;
 
   img {
-    padding: 1.5rem;
+    // padding: 1.5rem;
     object-fit: contain;
     aspect-ratio: inherit;
     color: white;

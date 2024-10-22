@@ -76,13 +76,12 @@ export default async function Home({ params }: { params: { slug: string } }) {
               <Image src="/home/statement.png" alt="Position Statement" fill />
             </div>
             <div className={styles.statementInfo}>
-              <h1 className={styles.title}>
-                El centro de la innovación es el diseño y de este, la gente.
-              </h1>
+              <h1 className={styles.title}>Valor desde la raíz</h1>
               <p>
-                Nos dedicamos a conectar la identidad de las marcas con las
-                personas, generarando cambios por medio de sus productos que
-                contribuyen mejorar la vida de sus usuarios.
+                Somos una agencia que crea, identifica, difunde y conecta la
+                identidad de tu marca con las personas, creando estrategias de
+                comunicación que contribuyen a generar cambios para mejorar
+                vidas.
               </p>
             </div>
           </div>
@@ -98,7 +97,7 @@ export default async function Home({ params }: { params: { slug: string } }) {
               const { nombre, medio, cliente, slug, pilar } = proyecto;
               return (
                 <Link
-                  href={`/proyecto/${slug}`}
+                  href={pilar ? `/proyecto/${slug}` : "/"}
                   className={styles.proyecto}
                   key={key}
                 >
@@ -120,9 +119,9 @@ export default async function Home({ params }: { params: { slug: string } }) {
               );
             })}
           </div>
-          <div className={styles.proyectosMore}>
+          {/* <div className={styles.proyectosMore}>
             <button className={styles.proyectosMoreBtn}>Cargar más</button>
-          </div>
+          </div> */}
         </section>
         {/* SERVICIOS */}
         <section className={styles.servicios}>
@@ -216,7 +215,7 @@ export default async function Home({ params }: { params: { slug: string } }) {
           <div className={styles.container}>
             <h3 className={styles.subTitleLabel}>Clientes</h3>
             <h2 className={styles.subTitle}>
-              Crecer es parte de vivir nosotros, cuidamos el proceso.
+              Crecer es parte de vivir, nosotros cuidamos el proceso.
             </h2>
           </div>
           <div className={styles.listaClientes}>
