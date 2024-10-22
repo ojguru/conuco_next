@@ -12,6 +12,12 @@
   @include titleDeco();
 }
 
+.decoCover {
+  width: 10%;
+  object-fit: contain;
+  float: left;
+}
+
 .subTitleLabel {
   text-transform: uppercase;
   color: $secondary-light;
@@ -185,6 +191,7 @@
 
 .statementMedio {
   @extend %medio;
+  background-color: transparent;
   padding-bottom: 100%;
 }
 

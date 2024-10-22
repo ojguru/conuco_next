@@ -73,10 +73,63 @@ export default async function Home({ params }: { params: { slug: string } }) {
         <section className={styles.statement}>
           <div className={`${styles.container} ${styles.statementContainer}`}>
             <div className={styles.statementMedio}>
-              <Image src="/home/statement.png" alt="Position Statement" fill />
+              <Image src="/home/escudo.svg" alt="Position Statement" fill />
             </div>
             <div className={styles.statementInfo}>
               <h1 className={styles.title}>Valor desde la raíz</h1>
+              <svg
+                className={styles.decoCover}
+                width="238px"
+                height="547px"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                xmlSpace="preserve"
+                viewBox="0 100 200 540"
+                style={{
+                  fillRule: "evenodd",
+                  clipRule: "evenodd",
+                  strokeMiterlimit: 10,
+                }}
+              >
+                <g transform="matrix(1,0,0,1,-14804.2,-299.296)">
+                  <g transform="matrix(2,0,0,2,12960,0)">
+                    <g transform="matrix(1,0,0,1,947.247,397.99)">
+                      <path
+                        d="M0,-223.217L0,-96.656C0,-84.812 4.705,-73.453 13.08,-65.078L23.587,-54.571C32.195,-45.963 37.031,-34.288 37.031,-22.115L37.031,0"
+                        style={{
+                          fill: "none",
+                          fillRule: "nonzero",
+                          stroke: "rgb(230,230,230)",
+                          strokeWidth: "5px",
+                        }}
+                      />
+                    </g>
+                    <g transform="matrix(1,0,0,1,984.279,397.989)">
+                      <path
+                        d="M0,-31.742C17.437,-31.742 31.572,-17.607 31.572,-0.17L31.572,0"
+                        style={{
+                          fill: "none",
+                          fillRule: "nonzero",
+                          stroke: "rgb(230,230,230)",
+                          strokeWidth: "5px",
+                        }}
+                      />
+                    </g>
+                    <g transform="matrix(1,0,0,1,947.247,301.334)">
+                      <path
+                        d="M0,-110.333L0,-21.805C0,-9.763 9.763,0 21.805,0"
+                        style={{
+                          fill: "none",
+                          fillRule: "nonzero",
+                          stroke: "rgb(230,230,230)",
+                          strokeWidth: "5px",
+                        }}
+                      />
+                    </g>
+                  </g>
+                </g>
+              </svg>
               <p>
                 Somos una agencia que crea, identifica, difunde y conecta la
                 identidad de tu marca con las personas, creando estrategias de
