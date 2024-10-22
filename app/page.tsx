@@ -15,7 +15,7 @@ import Link from "next/link";
 
 const QUERY = `
   query HomeQuery{
-    proyectos(pagination:{limit:6}, sort:["publishedAt:desc"]){
+    proyectos(pagination:{limit:6}, sort:["createdAt:asc"]){
       nombre
       slug
       cliente{
@@ -177,7 +177,7 @@ export default async function Home({ params }: { params: { slug: string } }) {
           </div> */}
         </section>
         {/* SERVICIOS */}
-        <section className={styles.servicios}>
+        {/* <section className={styles.servicios}>
           <div className={styles.container}>
             <h3 className={styles.subTitleLabel}>Nuestros Servicios</h3>
             <h2 className={styles.subTitle}>
@@ -262,7 +262,7 @@ export default async function Home({ params }: { params: { slug: string } }) {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
         {/* CLIENTES */}
         <section className={styles.clientes}>
           <div className={styles.container}>
