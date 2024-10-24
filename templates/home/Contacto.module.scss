@@ -1,0 +1,79 @@
+@import "@/styles/variables.module.scss";
+@import "@/styles/grid.module.scss";
+@import "@/styles/media.module.scss";
+@import "@/components/cta.module.scss";
+@import "@/styles/tipography.module.scss";
+
+.section {
+  position: relative;
+  overflow: hidden;
+  background-color: #f0f0f0;
+
+  svg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: $primary-base;
+    width: 60%;
+    transform: translate(50%, 70%);
+    z-index: 1;
+    @include mq(lg) {
+      max-width: 75rem;
+    }
+  }
+}
+
+.container {
+  @include container();
+  display: grid;
+  margin: $space-medium auto;
+  gap: 3rem;
+  @include mq(lg) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.info {
+  a,
+  p {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  p {
+    margin-top: 4rem;
+  }
+}
+
+.contactForm {
+  padding: 4rem 2.5rem;
+  position: relative;
+  display: grid;
+  align-items: center;
+
+  @include mq(md) {
+    padding: $space-small;
+  }
+
+  section {
+    z-index: 3;
+  }
+
+  &:before {
+    content: "";
+    border-radius: 2.5rem;
+    border: 0.4rem solid white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(white, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+
+    @include mq(md) {
+      border-radius: 5rem;
+    }
+  }
+}

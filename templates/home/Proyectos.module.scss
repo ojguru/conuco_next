@@ -1,0 +1,143 @@
+@import "@/styles/variables.module.scss";
+@import "@/styles/grid.module.scss";
+@import "@/styles/media.module.scss";
+@import "@/components/cta.module.scss";
+@import "@/styles/tipography.module.scss";
+
+.section {
+}
+
+.container {
+  @include container();
+}
+
+.lista {
+  display: grid;
+  margin-top: 3rem;
+  grid-template-columns: 1fr;
+  @include mq(xl) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.proyecto {
+  position: relative;
+  display: block;
+  margin-bottom: $space-thin;
+  overflow: hidden;
+  @include mq(xl) {
+    margin: initial;
+  }
+
+  &:hover {
+    .proyectoInfo {
+      @include mq(lg) {
+        opacity: 1;
+        bottom: 0;
+      }
+    }
+  }
+
+  .proyectoMedio {
+    @extend %medio;
+    img {
+      aspect-ratio: 4/5;
+      @include mq(md) {
+        aspect-ratio: 3.2/1;
+      }
+      @include mq(xl) {
+        aspect-ratio: 4/5;
+      }
+    }
+  }
+
+  &:nth-of-type(odd) {
+    @include mq(md) {
+      .proyectoInfo {
+        left: 0;
+      }
+    }
+  }
+
+  &:nth-of-type(even) {
+    @include mq(md) {
+      .proyectoInfo {
+        right: 0;
+      }
+    }
+  }
+
+  &:first-of-type,
+  &:nth-of-type(2) {
+    @include mq(xl) {
+      grid-column: 1 / span 4;
+    }
+    margin-bottom: $space-thin;
+    .proyectoInfo {
+      @include mq(xl) {
+        width: 50%;
+        position: absolute;
+      }
+    }
+    .proyectoMedio {
+      @extend %medio;
+
+      img {
+        @include mq(xl) {
+          aspect-ratio: 3.2/1;
+        }
+      }
+    }
+  }
+  .proyectoInfo {
+    position: absolute;
+    bottom: 0;
+    background-color: $primary-base;
+    color: white;
+    padding: $space-thin $space-thin;
+    width: 100%;
+    transition: opacity 0.3s ease-in, bottom 0.15s ease-in;
+    @include mq(md) {
+      width: 80%;
+    }
+    @include mq(lg) {
+      opacity: 0;
+      bottom: -12.5rem;
+    }
+
+    @include mq(xl) {
+      width: 100%;
+    }
+    h3 {
+      @include h5m();
+      font-weight: 800;
+      margin: 0;
+      @include mq(md) {
+        max-height: 2.7rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+
+    h4 {
+      margin: 0;
+      font-size: 1.6rem;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.proyectosMore {
+  margin: $space-thin auto;
+  text-align: center;
+}
+
+.proyectosMoreBtn {
+  @include cta();
+}

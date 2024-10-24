@@ -142,7 +142,20 @@
     left: 0;
     width: 8rem;
     height: 2rem;
-    border-radius: 0.25rem;
     background-color: $primary-base;
   }
+}
+
+.subTitleLabel {
+  text-transform: uppercase;
+  color: $secondary-light;
+  margin: 0;
+  margin-bottom: 0rem;
+  @include h6m();
+}
+
+.subTitle {
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: 700;
 }

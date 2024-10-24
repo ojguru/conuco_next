@@ -1,0 +1,52 @@
+@import "@/styles/variables.module.scss";
+@import "@/styles/grid.module.scss";
+@import "@/styles/media.module.scss";
+@import "@/components/cta.module.scss";
+@import "@/styles/tipography.module.scss";
+
+.section {
+  margin: $space-thin auto;
+  @include mq(lg) {
+    margin: $space-medium auto;
+  }
+}
+
+.container {
+  @include containerFluid();
+  display: grid;
+  gap: 5rem;
+  align-items: center;
+  @include mq(lg) {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+}
+
+.medio {
+  background-color: transparent;
+  max-width: 60rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.info {
+  max-width: 60rem;
+  @include mq(lg) {
+    position: relative;
+    transform: translate(0, 30%);
+  }
+  @include mq(xl) {
+    transform: translate(0, 25%);
+  }
+}
+
+.title {
+  @include titleDeco();
+}
+
+.deco {
+  width: 10%;
+  margin-right: 5%;
+  margin-bottom: 0.5rem;
+  float: left;
+}
