@@ -13,7 +13,7 @@ const Clientes = ({ clientes }: Props) => {
       <div className={styles.container}>
         <h3 className={styles.subTitleLabel}>Clientes</h3>
         <h2 className={styles.subTitle}>
-          Crecer es parte de vivir, nosotros cuidamos el proceso.
+          Crecer es parte de vivir, nosotros cuidamos el proceso
         </h2>
       </div>
       <div className={styles.lista}>

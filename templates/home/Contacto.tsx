@@ -12,7 +12,7 @@ const Contacto = () => {
         <div className={styles.info}>
           <h3 className={styles.subTitleLabel}>Contáctanos</h3>
           <h2 className={styles.subTitle}>
-            Tierra fertil para todos tus proyectos.
+            Tierra fertil para todos tus proyectos
           </h2>
 
           <p>Av. Estrella Zadalá / Plaza Cerro Alto</p>
