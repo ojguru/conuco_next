@@ -1,18 +1,9 @@
 import styles from "@/app/page.module.scss";
-import Formulario from "@/components/Formulario";
-import { Palmera } from "@/components/icons";
 import Cover from "@/templates/home/Cover";
 import { ImageFragment } from "@/fragments/GeneralSettings";
 import { Cliente, Proyecto } from "@/gql/graphql";
 import { fetchAPI, getImageURL } from "@/lib/api";
-import {
-  HUBSPOT_CONTACT_FORM,
-  SITE_NAME,
-  SITE_DESCRIPTION,
-  SITE_URL,
-} from "@/lib/constants";
-import Image from "next/image";
-import Link from "next/link";
+import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
 import Proyectos from "@/templates/home/Proyectos";
 import Servicios from "@/templates/home/Servicios";
 import Clientes from "@/templates/home/Clientes";
@@ -21,7 +12,7 @@ import Statement from "@/templates/home/Statement";
 
 const QUERY = `
   query HomeQuery{
-    proyectos(pagination:{limit:6}, sort:["createdAt:asc"]){
+    proyectos(pagination:{limit:6}, sort:["updatedAt:desc","createdAt:desc"]){
       nombre
       slug
       cliente{
@@ -54,13 +45,13 @@ export const metadata = {
     description: SITE_DESCRIPTION,
     url: `${SITE_URL}`,
     siteName: SITE_NAME,
-    // images: [
-    //   {
-    //     url: getImageURL(medio.url),
-    //     width: 800,
-    //     height: 600,
-    //   },
-    // ],
+    images: [
+      {
+        url: "/home/escudo.svg",
+        width: 800,
+        height: 600,
+      },
+    ],
   },
 };
 

@@ -9,7 +9,7 @@ const Cover = () => {
         <div className={styles.medio}>
           <Image
             src="/home/escudo.svg"
-            alt="Position Statement"
+            alt="Agencia Crativa Conuco"
             width={1920}
             height={1920}
           />

@@ -7,6 +7,7 @@ import Image from "next/image";
 import styles from "./page.module.scss";
 import ContenidoDynamicZone from "@/components/proyecto/ContenidoDynamicZone";
 import { notFound } from "next/navigation";
+import Contacto from "@/templates/home/Contacto";
 
 const QUERY = `
     query ProyectoQuery($slug:String!) {
@@ -126,6 +127,9 @@ const Page = async ({ params }: { params: { slug: string } }) => {
           }
           return <ContenidoDynamicZone component={component} key={key} />;
         })}
+      </section>
+      <section>
+        <Contacto />
       </section>
     </>
   );
