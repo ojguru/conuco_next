@@ -7,5 +7,7 @@
   display: grid;
   @include mq(md) {
     grid-template-columns: 1fr 1fr;
+    max-width: 192rem;
+    margin: 0 auto;
   }
 }
