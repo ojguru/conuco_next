@@ -2,7 +2,7 @@ import styles from "@/app/page.module.scss";
 import Cover from "@/templates/home/Cover";
 import { ImageFragment } from "@/fragments/GeneralSettings";
 import { Cliente, Proyecto } from "@/gql/graphql";
-import { fetchAPI, getImageURL } from "@/lib/api";
+import { fetchAPI } from "@/lib/api";
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL } from "@/lib/constants";
 import Proyectos from "@/templates/home/Proyectos";
 import Servicios from "@/templates/home/Servicios";
@@ -25,7 +25,7 @@ const QUERY = `
         ${ImageFragment}
       }
     }
-    clientes{
+    clientes(pagination:{limit:30}, sort:["nombre:asc"]){
       nombre
       logo{
         ${ImageFragment}

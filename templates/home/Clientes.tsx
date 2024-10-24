@@ -18,21 +18,25 @@ const Clientes = ({ clientes }: Props) => {
       </div>
       <div className={styles.lista}>
         <div className={styles.wrapper}>
-          {clientes.map((cliente, key) => {
-            const { logo, nombre } = cliente;
-            return (
-              <div className={styles.cliente} key={key}>
-                <div className={styles.medio}>
-                  <Image
-                    src={getImageURL(logo.url)}
-                    alt={nombre}
-                    width={1920}
-                    height={1080}
-                  />
+          {clientes
+            .filter((cliente) => {
+              return cliente.logo;
+            })
+            .map((cliente, key) => {
+              const { logo, nombre } = cliente;
+              return (
+                <div className={styles.cliente} key={key}>
+                  <div className={styles.medio}>
+                    <Image
+                      src={getImageURL(logo.url)}
+                      alt={nombre}
+                      width={1920}
+                      height={1080}
+                    />
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
         </div>
       </div>
     </section>
