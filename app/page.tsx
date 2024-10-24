@@ -17,6 +17,7 @@ import Proyectos from "@/templates/home/Proyectos";
 import Servicios from "@/templates/home/Servicios";
 import Clientes from "@/templates/home/Clientes";
 import Contacto from "@/templates/home/Contacto";
+import Statement from "@/templates/home/Statement";
 
 const QUERY = `
   query HomeQuery{
@@ -77,6 +78,7 @@ export default async function Home({ params }: { params: { slug: string } }) {
         {/* POSITION STATEMENT */}
         <Cover />
         <Proyectos proyectos={proyectos} />
+        <Statement />
         <Servicios />
         <Clientes clientes={clientes} />
         <Contacto />

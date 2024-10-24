@@ -1,0 +1,16 @@
+@import "@/styles/variables.module.scss";
+@import "@/styles/grid.module.scss";
+@import "@/styles/media.module.scss";
+@import "@/components/cta.module.scss";
+@import "@/styles/tipography.module.scss";
+
+.section {
+  @include container();
+  margin-top: $space-medium;
+  margin-bottom: $space-medium;
+}
+
+.title {
+  @include titleDeco();
+  @include h1m();
+}
